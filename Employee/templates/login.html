@@ -1,0 +1,45 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home page</title>
+</head>
+<body>
+  <center>
+    <h1 style="background-color:DodgerBlue;">Login</h1>
+    {% if msg %}
+     <b style="color: black;">{{msg}}</b>
+     {% endif %}
+    <form method="post" action="{% url 'login' %}" enctype="multipart/form-data">
+      {% csrf_token %}
+      <table>
+        
+         <tr>
+          <td>Email</td>
+          <td><input type="text" name="email"></td>
+        </tr>
+         
+         
+        <tr>
+          <td>Password</td>
+          <td><input type="password" name="password"></td>
+       
+       
+
+        <tr>
+          <td colspan="2" align="center">
+            <input type="submit" value="login" class="btn btn-primary">
+          </td>
+        </tr>
+      </table>
+    </form>
+  </center>
+</body>
+</html>
+{% endblock %}
+
